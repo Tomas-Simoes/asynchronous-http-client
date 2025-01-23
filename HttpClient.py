@@ -6,19 +6,18 @@ import warnings
 import time
 from pathlib import Path
 
+SSL_PATH = Path(__file__).resolve().parent.parent / \
+            'riot_client' / 'riotgames.pem'
 
 class HttpClient:
     def __init__(self, options={}):
-        ssl_path = Path(__file__).resolve().parent.parent / \
-            'riot_client' / 'riotgames.pem'
-
         self.baseURI = options["baseURI"]
         self.defaultOptions = {
             'headers': {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            'ssl': ssl.create_default_context(cafile=ssl_path),
+            'ssl': ssl.create_default_context(cafile=SSL_PATH),
             'timeout': 10
         }
 
