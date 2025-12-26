@@ -1,4 +1,4 @@
-# HttpClient Class Documentation
+# Asynchronous HTTP Client
 
 ## Overview
 The `HttpClient` class provides a simple way to send asynchronous HTTP requests to a RESTful API using the `aiohttp` library in Python. 
